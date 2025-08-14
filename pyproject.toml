@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dirclass"
+version = "0.1.0"
+authors = [
+  {name = "Rongxin Ouyang", email = "rongxin@u.nus.edu"}]
+description = "Treat a directory like a dataclass for recursive file listing and reading."
+requires-python = ">=3.10"
+keywords = ["files", "directories", "dataclass", "recursion", "utilities"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[tool.setuptools.packages.find]
+include = ["dirclass*"]
+where = ["."]
+
+
