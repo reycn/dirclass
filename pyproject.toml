@@ -19,10 +19,3 @@ classifiers = [
   "Programming Language :: Python :: 3.10",
   "Operating System :: OS Independent",
 ]
-
-[tool.setuptools.packages.find]
-include = ["dirclass*"]
-where = ["."]
-
-
-
