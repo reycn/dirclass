@@ -8,13 +8,14 @@ version = "0.1.0"
 authors = [
   {name = "Rongxin Ouyang", email = "rongxin@u.nus.edu"}]
 description = "Treat a directory like a dataclass for recursive file listing and reading."
+readme = "README.md"
+license = { file = "LICENSE" }
 requires-python = ">=3.10"
 keywords = ["files", "directories", "dataclass", "recursion", "utilities"]
 classifiers = [
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.10",
-  "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent",
 ]
 
