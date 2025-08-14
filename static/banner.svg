@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="400" viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">dirclass — Folders mapped to class attributes</title>
+  <desc id="desc">A banner showing a directory tree connected by lines to a Python dataclass-style panel, illustrating how subfolders become attributes.</desc>
+
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0A0F1E"/>
+      <stop offset="100%" stop-color="#0E1730"/>
+    </linearGradient>
+
+    <!-- Accent gradient -->
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+
+    <!-- Soft glow -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Shadow -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Icon: folder -->
+    <g id="icon-folder">
+      <path d="M6 7h18a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H4a3 3 0 0 1-3-3V6a2 2 0 0 1 2-2h7l3 3z" fill="#1F2A44"/>
+      <rect x="1" y="9" width="26" height="15" rx="3" fill="#2A3B66"/>
+      <rect x="1" y="9" width="26" height="15" rx="3" fill="url(#folderGrad)" opacity="0.5"/>
+    </g>
+
+    <!-- Icon: file -->
+    <g id="icon-file">
+      <path d="M6 2h10l6 6v18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" fill="#1F2A44"/>
+      <path d="M16 2v6h6" fill="#2A3B66"/>
+      <rect x="7.5" y="12" width="13" height="1.8" rx="0.9" fill="#3D4E7A"/>
+      <rect x="7.5" y="16" width="10" height="1.8" rx="0.9" fill="#3D4E7A"/>
+      <rect x="7.5" y="20" width="8" height="1.8" rx="0.9" fill="#3D4E7A"/>
+    </g>
+
+    <!-- Folder face tint -->
+    <linearGradient id="folderGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0.18"/>
+    </linearGradient>
+
+    <style>
+      .title { font: 700 64px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", sans-serif; }
+      .subtitle { font: 500 20px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", sans-serif; }
+      .code { font: 500 18px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+      .muted { fill: #94A3B8; }
+      .thin { stroke-width: 1.25; vector-effect: non-scaling-stroke; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="400" fill="url(#bg)"/>
+
+  <!-- Header -->
+  <g transform="translate(72, 80)">
+    <text class="title" filter="url(#glow)">
+      <tspan fill="url(#accent)">dir</tspan><tspan fill="#E5E7EB">class</tspan>
+    </text>
+    <!-- <text class="subtitle muted" y="54">Folders → attributes. Treat a directory like a dataclass — recursively.</text> -->
+  </g>
+
+  <!-- LEFT: Folder tree -->
+  <g id="tree" transform="translate(72, 140)">
+    <!-- spine -->
+    <g stroke="#3B82F6" opacity="0.85" class="thin">
+      <path d="M20 16 h30 v44"/>
+      <path d="M50 60 v42"/>
+      <path d="M50 102 v42"/>
+      <path d="M50 144 v42"/>
+    </g>
+
+    <!-- nodes -->
+    <g>
+      <g transform="translate(12, 0)">
+        <use href="#icon-folder" transform="scale(1.2)"/>
+        <text class="code" x="60" y="28" fill="#BFD1FF">project/</text>
+      </g>
+
+      <g id="node-src" transform="translate(82, 48)">
+        <use href="#icon-folder"/>
+        <text class="code" x="36" y="22" fill="#BFD1FF">src/</text>
+      </g>
+      <g id="node-data" transform="translate(82, 90)">
+        <use href="#icon-folder"/>
+        <text class="code" x="36" y="22" fill="#BFD1FF">data/</text>
+      </g>
+      <g id="node-gallery" transform="translate(82, 132)">
+        <use href="#icon-folder"/>
+        <text class="code" x="36" y="22" fill="#BFD1FF">Gallery/</text>
+      </g>
+
+      <!-- sample files -->
+      <g transform="translate(164, 46)">
+        <use href="#icon-file"/>
+        <text class="code" x="30" y="24" fill="#BFD1FF">main.py</text>
+      </g>
+      <g transform="translate(174, 88)">
+        <use href="#icon-file"/>
+        <text class="code" x="30" y="24" fill="#BFD1FF">notes.md</text>
+      </g>
+      <g transform="translate(208, 130)">
+        <use href="#icon-file"/>
+        <text class="code" x="30" y="24" fill="#BFD1FF">cover.png</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT: Dataclass panel -->
+  <g id="class-card" transform="translate(640, 118)" filter="url(#shadow)">
+    <rect x="0" y="0" rx="14" ry="14" width="540" height="228" fill="#0E1A33" stroke="#1F2A44" class="thin"/>
+    <g transform="translate(18, 20)">
+      <text class="code" x="0" y="0" fill="#9CA3AF">@dataclass</text>
+      <text class="code" x="0" y="28" fill="#E5E7EB">class Dir:</text>
+
+      <!-- attribute lines (targets for connectors) -->
+      <text id="attr-src" class="code" x="24" y="64" fill="#E5E7EB">src: list[str]      <tspan fill="#9CA3AF"></tspan></text>
+      <text id="attr-data" class="code" x="24" y="94" fill="#E5E7EB">data: list[str]     <tspan fill="#9CA3AF"></tspan></text>
+      <text id="attr-gallery" class="code" x="24" y="124" fill="#E5E7EB">Gallery: list[str]  <tspan fill="#9CA3AF"></tspan></text>
+
+      <text class="code" x="0" y="168" fill="#9CA3AF">def all(self, patterns="*") -> list[str]: ...</text>
+      <text class="code" x="0" y="196" fill="#9CA3AF">def read_all(self, patterns="*") -> list[str]: </text>
+    </g>
+
+    <!-- alias badges -->
+    <g transform="translate(360, 32)">
+      <rect x="-80" y="-4" rx="" ry="6" width="90" height="24" fill="#132247" stroke="#1F2A44" class="thin"/>
+      <text class="code" x="-76" y="13" fill="#93C5FD">aliases</text>
+    </g>
+    <g transform="translate(360, 64)">
+      <rect x="-80" y="0" rx="6" ry="6" width="190" height="24" fill="#132247" stroke="#1F2A44" class="thin"/>
+      <text class="code" x="-76" y="17" fill="#A7F3D0">.path_src / .src</text>
+    </g>
+    <g transform="translate(360, 94)">
+      <rect x="-80" y="0" rx="6" ry="6" width="70" height="24" fill="#132247" stroke="#1F2A44" class="thin"/>
+      <text class="code" x="-76" y="17" fill="#A7F3D0">.data</text>
+    </g>
+    <g transform="translate(360, 124)">
+      <rect x="-80" y="0" rx="6" ry="6" width="220" height="24" fill="#132247" stroke="#1F2A44" class="thin"/>
+      <text class="code" x="-76" y="17" fill="#A7F3D0">.Gallery / .gallery</text>
+    </g>
+  </g>
+
+  <!-- CONNECTORS: folder nodes -> attributes -->
+  <!-- Curved connectors with arrowheads -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#60A5FA"/>
+    </marker>
+  </defs>
+
+  <!-- src connector -->
+  <path d="M 244 188 C 380 188, 540 182, 640 182" stroke="#60A5FA" class="thin" fill="none" marker-end="url(#arrow)"/>
+  <!-- data connector -->
+  <path d="M 244 230 C 380 230, 540 212, 640 212" stroke="#38BDF8" class="thin" fill="none" marker-end="url(#arrow)"/>
+  <!-- Gallery connector -->
+  <path d="M 244 272 C 380 272, 540 242, 640 242" stroke="#22D3EE" class="thin" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- LEGEND -->
+  <!-- <g transform="translate(72, 340)">
+    <rect x="0" y="-16" rx="8" ry="8" width="520" height="28" fill="#0E1A33" stroke="#1F2A44" class="thin"/>
+    <text class="code" x="12" y="4" fill="#9CA3AF">Folders → attributes  •  case-insensitive  •  recursive  •  glob filters ("*.py", "*.md")</text>
+  </g> -->
+
+  <!-- Footer code pill -->
+  <!-- <g transform="translate(720, 340)" filter="url(#shadow)">
+    <rect x="0" y="-16" rx="10" ry="10" width="408" height="28" fill="#0E1A33" stroke="#1F2A44" class="thin"/>
+    <text class="code" x="14" y="4" fill="#C7D2FE">d = dirclass("./project", recursive=True, file_types=["*.py","*.md"])</text>
+  </g> -->
+</svg>

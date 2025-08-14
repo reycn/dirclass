@@ -1,11 +1,12 @@
 <!--
  * @Date: 2025-08-14 15:41:37
  * @LastEditors: Rongxin rongxin@u.nus.edu
- * @LastEditTime: 2025-08-14 15:43:53
+ * @LastEditTime: 2025-08-14 19:22:02
  * @FilePath: /dirclass/README.md
 -->
-## dirclass
+<!-- ## dirclass -->
 
+![](./static/banner.svg)
 Treat a directory like a dataclass for ease, recursively.
 
 ### Main features
