@@ -9,9 +9,10 @@ authors = [
   {name = "Rongxin Ouyang", email = "rongxin@u.nus.edu"}]
 description = "Treat a directory like a dataclass for recursive file listing and reading."
 readme = "README.md"
-license = { file = "LICENSE" }
+license = "MIT"
 requires-python = ">=3.10"
 keywords = ["files", "directories", "dataclass", "recursion", "utilities"]
+license-files = ["LICENSE*"]
 classifiers = [
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3 :: Only",
@@ -22,5 +23,6 @@ classifiers = [
 [tool.setuptools.packages.find]
 include = ["dirclass*"]
 where = ["."]
+
 
 
